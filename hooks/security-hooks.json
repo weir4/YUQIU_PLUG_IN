@@ -1,0 +1,12 @@
+{
+  "securityHooks": [
+    {
+      "name": "security-scan",
+      "command": "echo 'Running security scan'"
+    },
+    {
+      "name": "dependency-check",
+      "command": "echo 'Checking dependencies'"
+    }
+  ]
+}

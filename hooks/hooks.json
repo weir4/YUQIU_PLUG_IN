@@ -1,0 +1,12 @@
+{
+  "hooks": [
+    {
+      "name": "pre-commit",
+      "command": "echo 'Running pre-commit hook'"
+    },
+    {
+      "name": "post-merge",
+      "command": "echo 'Running post-merge hook'"
+    }
+  ]
+}
