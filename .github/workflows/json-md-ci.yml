@@ -1,0 +1,41 @@
+name: JSON and MD CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          # Check all JSON files for validity
+          find . -name "*.json" -type f | grep -v ".git" | while read file; do
+            echo "Validating $file"
+            jq . "$file"
+            if [ $? -ne 0 ]; then
+              echo "Invalid JSON in $file"
+              exit 1
+            fi
+          done
+
+      - name: Install markdownlint
+        run: npm install -g markdownlint-cli
+
+      - name: Validate MD files
+        run: |
+          # Check all MD files for linting issues
+          find . -name "*.md" -type f | grep -v ".git" | while read file; do
+            echo "Linting $file"
+            markdownlint "$file"
+            if [ $? -ne 0 ]; then
+              echo "Markdown linting issues in $file"
+              exit 1
+            fi
+          done
