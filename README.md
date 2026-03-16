@@ -2,17 +2,6 @@
 
 企业级插件，提供代码审查、安全扫描、性能测试等功能。
 
-## 目录结构
-
-```
-.claude-plugin/     # 元数据目录
-commands/           # 简单 skills（单个 .md 文件）
-skills/             # Agent Skills（推荐，目录+SKILL.md）
-agents/             # 子智能体
-hooks/              # 事件钩子
-scripts/            # 辅助脚本
-```
-
 ## 使用方法
 
 1. 安装插件
@@ -30,7 +19,7 @@ scripts/            # 辅助脚本
 
 MIT
 
-## 目录结构
+## 项目目录结构
 YUQIU_PLUG_IN/
 ├── .yuqiu-plugin/          # 元数据目录
 │   └── plugin.json
