@@ -20,7 +20,6 @@
 MIT
 
 ## 项目目录结构
-
 YUQIU_PLUG_IN/
 ├── .yuqiu-plugin/          # 元数据目录
 │   └── plugin.json
